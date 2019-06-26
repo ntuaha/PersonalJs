@@ -24,3 +24,22 @@ var app3 = new Vue({
         seen: true
     }
 })
+
+
+var app4 = new Vue({
+    el: '#app-4',
+    data: {
+        todos: [{
+                context: '支持多元能源相關政策'
+            },
+            {
+                context: '支持金融創新法規開放相關政策'
+            },
+            {
+                context: '支持地方基礎運輸建設開放相關政策'
+            }, {
+                context: '協助新莊相關基礎建設與開放都市規劃進度追蹤'
+            }
+        ]
+    }
+})
