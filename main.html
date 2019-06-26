@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>aha的官方頁面</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-WWNDCS2');
+        </script>
+        <!-- End Google Tag Manager -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+        <style>
+            body {
+                padding-top: 70px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+
+
+
+
+
+
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWNDCS2" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <!-- Navigation-->
+        <navbar id="navbar" :brand="brand" :search_name="search_name"></navbar>
+        <!-- Content-->
+        <div class="container">
+            <div class="row">
+
+
+                <div id="app" class="card col-3">
+                    <img class="card-img-top" v-bind:src="personal_image" alt="aha">
+                    <div class="card-body">
+                        <h5 class="card-title">{{name}} ({{nickname}})</h5>
+                        <p class="card-text">
+                            {{ message }}
+                        </p>
+
+                        <contact-item v-for="info in infoList" v-bind:info="info" v-bind:key="info.id">
+                        </contact-item>
+
+                        <a class="btn btn-success" :href="support_link" role="button"><span
+                                class="glyphicon glyphicon-usd"></span>{{support_name}}</a>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div id="app-4" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">{{title}}</h2>
+                        </div>
+                        <div class="panel-body">
+                            <ol>
+                                <li v-for="(issue,index) in issues" @click="showInfo(issue,index)">
+                                    {{issue.context}}
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div id="app-2" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">{{title}}</h2>
+                        </div>
+                        <div class="panel-body">
+                            <p v-bind:title="message">
+                                {{context}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="col-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">選區資訊</h2>
+                        </div>
+                        <div class="panel-body">
+                            <a
+                                href="https://zh.wikipedia.org/wiki/%E6%96%B0%E5%8C%97%E5%B8%82%E7%AC%AC%E5%9B%9B%E9%81%B8%E8%88%89%E5%8D%80_(%E7%AB%8B%E6%B3%95%E5%A7%94%E5%93%A1)">新北市第四選舉區區域立法委員選區</a>，總人口數
+                            282,373人，現任立委為民進黨吳秉叡，2016年以116,723票(62%)當選．
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">相關活動訊息</h2>
+                        </div>
+                        <div id="app-3" class="panel-body">
+                            <span v-if="seen">Now you see me</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- footter -->
+        <div class="row">
+            <h3></h3>
+        </div>
+
+        <!-- production version, optimized for size and speed -->
+        <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="./main/main.js"></script>
+    </body>
+
+</html>
